@@ -10,6 +10,7 @@
 	<button class="btn btn-default pull-right" ng-click="vm.attend()" ng-show="vm.isGuest()">加入</button>
 	<button class="btn btn-default pull-right" ui-sref="fillProjectCustomFieldData({ projectId: vm.project.id })" ng-show="vm.isMember()">填寫資料</button>
 	<button class="btn btn-default pull-right" ui-sref="project.edit({ projectId: vm.project.id })" ng-show="vm.isCreator()">編輯</button>
+	<button class="btn btn-default pull-right" ng-click="vm.psp()" ng-show="vm.isCreator()">PSP 按鈕</button>
 	<hr>
 	<div id="project-basic" class="project-section row">
 		<div class="col-md-6 col-lg-6">

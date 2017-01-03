@@ -9,8 +9,11 @@
   function project(
     $log,
     $q,
+    $http,
+    config,
     projectEndpoint,
     alertMessage) {
+    var apiBaseUrl = config.apiBaseUrl;
     var service = {
       getById: getById,
       getAll: getAll,
@@ -18,6 +21,7 @@
       create: create,
       update: update,
       getHyperlinks: getHyperlinks,
+      getMembers: getMembers,
       storeHyperlinks: storeHyperlinks,
       deleteHyperlinks: deleteHyperlinks,
       createOrUpdateHyperlinks: createOrUpdateHyperlinks
@@ -112,6 +116,13 @@
       return $http({
         method: 'GET',
         url: apiBaseUrl + '/projects/' + projectId + '/hyperlinks'
+      });
+    }
+
+    function getMembers(projectId) {
+      return $http({
+       method: 'GET',
+       url: apiBaseUrl + '/projects/' + projectId + '/members'
       });
     }
 
